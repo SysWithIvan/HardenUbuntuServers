@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # ========================================================================
 # Script:        harden.sh
-# Description:   This script has been designed to harden Ubuntu Linux servers
-#                in order to pass benchmarks related with the Spanish ENS and
-#                the CIS guide for Ubuntu.
+# Description:   This script has been designed to Harden Ubuntu Linux servers 
+#                to align with the CIS Benchmarks for Ubuntu.
 # Usage:         chmod +x harden.sh; sudo ./harden.sh
 # Tested on:     Ubuntu 24.04 LTS
 # Author:        Iván Texenery Díaz García (ivantexenery@gmail.com)
