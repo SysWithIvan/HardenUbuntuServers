@@ -69,7 +69,7 @@ sudo systemctl restart wazuh-agent
 ![alt text](https://private-user-images.githubusercontent.com/51971959/491496212-0c7ddc29-00be-4a3f-95d0-9a90ff5eb1d7.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgyNzQwOTMsIm5iZiI6MTc1ODI3Mzc5MywicGF0aCI6Ii81MTk3MTk1OS80OTE0OTYyMTItMGM3ZGRjMjktMDBiZS00YTNmLTk1ZDAtOWE5MGZmNWViMWQ3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE5VDA5MjMxM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhMThmZWU5MjQ4MDJiOTk4ZDVhMzQ4N2Y0MjMyY2YwMjVkMTUxYjc3NTllNGJlZWYzZmY3NTA1YTA0YzJkNDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0._zntxxz02yB_EjLXtMFON2Bl75fg0x8dDCw8KnC9kMo)
 
 ## Common issues
-This script modify the ```/etc/fstab``` file, adding ro and noexec options to ```/home``` and ```/boot``` partitions. To solve this problem, edit the file, remove these options form /home and /boot and remount the partitions:
+This script modify the ```/etc/fstab``` file, adding ro and noexec options to ```/home``` and ```/boot``` partitions. To solve this problem, edit the file, remove these options from /home and /boot and remount the partitions:
 ```
 mount -o remount /home
 mount -o remount /boot
