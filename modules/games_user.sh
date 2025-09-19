@@ -1,0 +1,1 @@
+id -u games &>/dev/null && userdel -r games || true

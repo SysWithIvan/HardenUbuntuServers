@@ -32,7 +32,7 @@ my_relay_ip
 ```
 Save your changes and run:
 ```
-sudo chmod +x harden.sh
+sudo chmod -R +x .
 sudo ./harden.sh
 ```
 ## Verifying the hardening
