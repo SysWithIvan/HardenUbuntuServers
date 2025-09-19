@@ -77,4 +77,5 @@ This project targets Ubuntu 24.04 and a specific environment. The provided SCA f
 If you want to help to improve this project, you have any doubt or suggestion, please contact with me:
 
 Mail: ivantexenery@gmail.com
+
 LinkedIn: [SysWithIvan](www.linkedin.com/in/iván-texenery-díaz-garcía-060621182)
