@@ -8,9 +8,34 @@
 # Tested on:     Ubuntu 24.04 LTS
 # Author:        Iván Texenery Díaz García (ivantexenery@gmail.com)
 # Version:       1.0.0 (2025-09-15)
-# License:       
+# License:       GPL-3.0-or-later
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (c) 2025 Iván Texenery Díaz García
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version. See the LICENSE file for details.       
 # =======================================================================
 export DEBIAN_FRONTEND=noninteractive
+AUTHORIZED_TEXT="
+
+Put something useful to warn about the consequences of a bad use of the systems
+
+"
+HOSTS_ALLOW_TEXT="
+sshd: --> put networks which from can access using ssh login 
+slapd: --> put networks which from can validate across LDAP/Kerberos
+"
+SUPPORT_MAIL="
+Put the mail which will receive the alerts, such as the space left on device alert.
+"
+POSTFIX_DOMAIN="
+mydomain.net
+"
+POSTFIX_IP="
+my_relay_ip
+"
 
 #########################################################################
 # 0) Establish system language
@@ -173,7 +198,7 @@ fi
 # 7) hosts configuration
 #########################################################################
 echo "all:all" > /etc/hosts.deny
-echo "sshd: 10.140.198.0/24, 10.141.231.0/24" > /etc/hosts.allow
+printf '%s\n' "$HOSTS_ALLOW_TEXT" > /etc/hosts.allow
 
 #########################################################################
 # 8) GRUB configuration
@@ -335,8 +360,8 @@ sed -i 's/^[#[:space:]]*space_left .*/space_left = 500/' /etc/audit/auditd.conf 
 || echo 'space_left = 500' >> /etc/audit/auditd.conf
 
 grep -E '^[^_]*action_mail_acct[^_]'  /etc/audit/auditd.conf && \
-sed -i 's/^[#[:space:]]*action_mail_acct.*/action_mail_acct = soporte@grafcan.com/' /etc/audit/auditd.conf \
-|| echo 'action_mail_acct = soporte@grafcan.com' >> /etc/audit/auditd.conf
+sed -i 's/^[#[:space:]]*action_mail_acct.*/action_mail_acct = $SUPPORT_MAIL/' /etc/audit/auditd.conf \
+|| echo 'action_mail_acct = $SUPPORT_MAIL' >> /etc/audit/auditd.conf
 
 find /etc/audit/ -type f \( -name '*.conf' -o -name '*.rules' \) -exec chmod u-x,g-wx,o-rwx {} +
 systemctl restart auditd || true
@@ -503,12 +528,12 @@ fi
 #########################################################################
 # 18) postfix configuration
 #########################################################################
-grep -E '^myorigin'  /etc/postfix/main.cf && sed -i 's/^[#[:space:]]*myorigin.*/myorigin = grafcan.net/' /etc/postfix/main.cf \
-|| echo 'myorigin = grafcan.net' >> /etc/postfix/main.cf
-grep -E '^relay'  /etc/postfix/main.cf && sed -i 's/^[#[:space:]]*relay.*/relay = [192.168.20.55]:25/' /etc/postfix/main.cf \
-|| echo 'relay = [192.168.20.55]:25' >> /etc/postfix/main.cf
-grep -E '^myhostname'  /etc/postfix/main.cf && sed -i "s/^[#[:space:]]*myhostname.*/myhostname = ${HOSTNAME}.grafcan.net/" /etc/postfix/main.cf \
-|| echo "myhostname = ${HOSTNAME}.grafcan.net" >> /etc/postfix/main.cf
+grep -E '^myorigin'  /etc/postfix/main.cf && sed -i 's/^[#[:space:]]*myorigin.*/myorigin = $POSTFIX_DOMAIN/' /etc/postfix/main.cf \
+|| echo 'myorigin = $POSTFIX_DOMAIN' >> /etc/postfix/main.cf
+grep -E '^relay'  /etc/postfix/main.cf && sed -i 's/^[#[:space:]]*relay.*/relay = [$POSTFIX_IP]:25/' /etc/postfix/main.cf \
+|| echo 'relay = [$POSTFIX_IP]:25' >> /etc/postfix/main.cf
+grep -E '^myhostname'  /etc/postfix/main.cf && sed -i "s/^[#[:space:]]*myhostname.*/myhostname = ${HOSTNAME}.$POSTFIX_DOMAIN/" /etc/postfix/main.cf \
+|| echo "myhostname = ${HOSTNAME}.$POSTFIX_DOMAIN" >> /etc/postfix/main.cf
 
 #########################################################################
 # 19) systemd-timesyncd
@@ -692,26 +717,8 @@ fi
 #########################################################################
 # 25) /etc/issue and /etc/issue.net
 #########################################################################
-authorized_text="
-
-Si usted no es usuario autorizado por Cartografica de Canarias (GRAFCAN), no intente iniciar sesion en este equipo.
-
-Si usted es usuario autorizado por GRAFCAN le recordamos que la 'Normativa de uso de los sistemas' es de aplicacion a todo el ambito de actuacion de la Organizacion, y sus contenidos traen causa de las directrices de caracter mas general definidas en el ordenamiento juridico vigente, en la Politica de Seguridad de la Informacion y en las Normas de Seguridad de GRAFCAN.
-
-Esta normativa es de aplicacion y de obligado cumplimiento para todo el personal que, de manera permanente o eventual, preste sus servicios en GRAFCAN.
-
-Se considera un incumplimiento de sus obligaciones por parte del usuario, susceptible de ser sancionado, la inobservancia de las normas y procedimientos definidos por la empresa.
-
-La valoracion de las consecuencias del incumplimiento para el infractor, y las medidas a adoptar seran tomadas de conformidad con las normas que regulan la relacion laboral entre la empresa y el usuario.
-
-Puede consultar la Normativa de uso de los sistemas completa en el documento:
-        'PR10-NOS09 Normativa de uso de los sistemas (mp.eq)'
-
-Este documento se encuentra dentro del recurso compartido del sistema de gestion integral, donde encontrara tambien la 'Politica de Seguridad' de la empresa y el resto de normas y procedimientos.
-
-"
-printf '%s\n' "$authorized_text" > /etc/issue
-printf '%s\n' "$authorized_text" > /etc/issue.net
+printf '%s\n' "$AUTHORIZED_TEXT" > /etc/issue
+printf '%s\n' "$AUTHORIZED_TEXT" > /etc/issue.net
 
 #########################################################################
 # 26) rest of configurations
