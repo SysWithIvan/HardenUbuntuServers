@@ -56,18 +56,23 @@ sudo systemctl restart wazuh-agent
 
 #### Once you have reload the rules, you have to go to the Wazuh Manager URL and go inside Agents Management Summary:
 
-![Not image available](<img width="311" height="957" alt="image" src="https://github.com/user-attachments/assets/bf8c5dec-3bd4-4c04-bcb5-d990967c2ad0" />
-)
+<img width="311" height="957" alt="image" src="https://github.com/user-attachments/assets/5a2ad643-6eb8-44b2-94b9-328a1a32d02b" />
+
 
 #### Then, you choose your agent:
 
-![Not image available](https://private-user-images.githubusercontent.com/51971959/491495482-052d0a7c-4f0a-4a5d-a14b-881ff64529b9.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgyNzQwOTMsIm5iZiI6MTc1ODI3Mzc5MywicGF0aCI6Ii81MTk3MTk1OS80OTE0OTU0ODItMDUyZDBhN2MtNGYwYS00YTVkLWExNGItODgxZmY2NDUyOWI5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE5VDA5MjMxM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTljMTkwMDFjNjJlNWU0YzRjMDhlNDJiNmFjZTk0ZmY4MjllYWNkNjZiNWUyMmNkMGY1OTFmOGMyOGE4NTQ0MTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6QRjgrWkMBWLHnSucFKvNZcy9vU-r3xrgR0Cjjff8wA)
+<img width="303" height="172" alt="image" src="https://github.com/user-attachments/assets/586abb97-262a-42ea-834c-d75d444038f6" />
+
 
 #### Go into CIS benchmark:
-![Not image available](https://private-user-images.githubusercontent.com/51971959/491495779-63f2ddfb-9ce3-4ba3-819f-3839bf6681cd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgyNzQwOTMsIm5iZiI6MTc1ODI3Mzc5MywicGF0aCI6Ii81MTk3MTk1OS80OTE0OTU3NzktNjNmMmRkZmItOWNlMy00YmEzLTgxOWYtMzgzOWJmNjY4MWNkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE5VDA5MjMxM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcxNWFmZjk1ZDRmMmI5MDYzNDJkYTIyNzE1MzMyODIzODJmMmNhYjRjODgwZDU2OTUyOWVkYjhkYjVlMzMyZjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.sJwWLlpH2HVp-u0qXhWorXcx1DiD7ifkkQsyy6aWbb8)
+
+<img width="948" height="412" alt="image" src="https://github.com/user-attachments/assets/d0f822b7-000a-4e99-8526-6b8e0d929393" />
+
 
 #### And finally you can see the scan report:
-![alt text](https://private-user-images.githubusercontent.com/51971959/491496212-0c7ddc29-00be-4a3f-95d0-9a90ff5eb1d7.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgyNzQwOTMsIm5iZiI6MTc1ODI3Mzc5MywicGF0aCI6Ii81MTk3MTk1OS80OTE0OTYyMTItMGM3ZGRjMjktMDBiZS00YTNmLTk1ZDAtOWE5MGZmNWViMWQ3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE5VDA5MjMxM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhMThmZWU5MjQ4MDJiOTk4ZDVhMzQ4N2Y0MjMyY2YwMjVkMTUxYjc3NTllNGJlZWYzZmY3NTA1YTA0YzJkNDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0._zntxxz02yB_EjLXtMFON2Bl75fg0x8dDCw8KnC9kMo)
+
+<img width="1905" height="922" alt="image" src="https://github.com/user-attachments/assets/5209f630-621c-45d1-bccb-68a52e06cdbc" />
+
 
 ## Common issues
 This script modify the ```/etc/fstab``` file, adding ro and noexec options to ```/home``` and ```/boot``` partitions. To solve this problem, edit the file, remove these options from /home and /boot and remount the partitions:
@@ -86,3 +91,4 @@ Mail: ivantexenery@gmail.com
 
 
 LinkedIn: [SysWithIvan](www.linkedin.com/in/iván-texenery-díaz-garcía-060621182)
+
