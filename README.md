@@ -56,7 +56,8 @@ sudo systemctl restart wazuh-agent
 
 #### Once you have reload the rules, you have to go to the Wazuh Manager URL and go inside Agents Management Summary:
 
-![Not image available](https://private-user-images.githubusercontent.com/51971959/491494810-96c95a0c-535e-43a2-bcd2-940187d36c30.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgyNzQwOTMsIm5iZiI6MTc1ODI3Mzc5MywicGF0aCI6Ii81MTk3MTk1OS80OTE0OTQ4MTAtOTZjOTVhMGMtNTM1ZS00M2EyLWJjZDItOTQwMTg3ZDM2YzMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA5MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwOTE5VDA5MjMxM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZkYzBlMzNlODBmOThhMzE2NGY5ZjBmOTUxZjUyNDZlNGY0YjNmZDQ1OTQ4MTRhNTM1ZDQ0MTJiYWRmNzNmNWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.NeJE4w3rYDqEP63siVhj6KqmvtUmYPELdCcOieizakw)
+![Not image available](<img width="311" height="957" alt="image" src="https://github.com/user-attachments/assets/bf8c5dec-3bd4-4c04-bcb5-d990967c2ad0" />
+)
 
 #### Then, you choose your agent:
 
@@ -82,5 +83,6 @@ This project targets Ubuntu 24.04 and a specific environment. The provided SCA f
 If you want to help to improve this project, you have any doubt or suggestion, please contact with me:
 
 Mail: ivantexenery@gmail.com
+
 
 LinkedIn: [SysWithIvan](www.linkedin.com/in/iván-texenery-díaz-garcía-060621182)
