@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ========================================================================
-# Tested on:     Ubuntu 24.04 LTS
+# Tested on:     Ubuntu 24.04 LTS, Ubuntu 22.04 LTS
 # Author:        Iván Texenery Díaz García (ivantexenery@gmail.com)
 # Version:       1.0.0 (2025-09-15)
 # SPDX-License-Identifier: GPL-3.0-or-later

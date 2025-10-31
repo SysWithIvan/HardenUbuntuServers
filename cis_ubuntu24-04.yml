@@ -1,5 +1,5 @@
 # Security Configuration Assessment
-# CIS Checks for Ubuntu Linux 22.04 LTS
+# CIS Checks for Ubuntu Linux 22.04 LTS, Ubuntu 22.04 LTS
 # Copyright (C) 2024, Wazuh Inc.
 #
 # This program is free software; you can redistribute it
@@ -22,7 +22,7 @@ requirements:
   description: "Requirements for running the SCA scan against Ubuntu Linux 24.04 LTS"
   condition: all
   rules:
-      - "f:/etc/os-release -> r:Ubuntu 24.04"
+      - "f:/etc/os-release -> r:Ubuntu 24.04 || r:Ubuntu 22.04"
       - "f:/proc/sys/kernel/ostype -> Linux"
 
 # variables:

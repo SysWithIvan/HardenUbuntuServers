@@ -4,7 +4,7 @@
 # Description:   This script has been designed to Harden Ubuntu Linux servers 
 #                to align with the CIS Benchmarks for Ubuntu.
 # Usage:         chmod +x harden.sh; sudo ./harden.sh
-# Tested on:     Ubuntu 24.04 LTS
+# Tested on:     Ubuntu 24.04 LTS, Ubuntu 22.04 LTS
 # Author:        Iván Texenery Díaz García (ivantexenery@gmail.com)
 # Version:       1.0.0 (2025-09-15)
 # SPDX-License-Identifier: GPL-3.0-or-later
