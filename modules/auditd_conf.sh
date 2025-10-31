@@ -42,9 +42,9 @@ grep -E '^[^_]*space_left[^_]'  /etc/audit/auditd.conf && \
 sed -i 's/^[#[:space:]]*space_left .*/space_left = 500/' /etc/audit/auditd.conf \
 || echo 'space_left = 500' >> /etc/audit/auditd.conf
 
-grep -E '^[^_]*action_mail_acct[^_]'  /etc/audit/auditd.conf && \
-sed -i 's/^[#[:space:]]*action_mail_acct.*/action_mail_acct = $SUPPORT_MAIL/' /etc/audit/auditd.conf \
-|| echo 'action_mail_acct = $SUPPORT_MAIL' >> /etc/audit/auditd.conf
+grep -E "^[^_]*action_mail_acct[^_]"  /etc/audit/auditd.conf && \
+sed -i "s/^[#[:space:]]*action_mail_acct.*/action_mail_acct = ${SUPPORT_MAIL}/" /etc/audit/auditd.conf \
+|| echo "action_mail_acct = ${SUPPORT_MAIL}" >> /etc/audit/auditd.conf
 
 find /etc/audit/ -type f \( -name '*.conf' -o -name '*.rules' \) -exec chmod u-x,g-wx,o-rwx {} +
 systemctl restart auditd || true

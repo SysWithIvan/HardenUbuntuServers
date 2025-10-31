@@ -16,24 +16,15 @@
 # (at your option) any later version. See the LICENSE file for details.       
 # =======================================================================
 export DEBIAN_FRONTEND=noninteractive
-AUTHORIZED_TEXT="
-
+export AUTHORIZED_TEXT="
 Put something useful to warn about the consequences of a bad use of the systems
-
 "
-HOSTS_ALLOW_TEXT="
+export HOSTS_ALLOW_TEXT="
 sshd: --> put networks which from can access using ssh login 
-slapd: --> put networks which from can validate across LDAP/Kerberos
 "
-SUPPORT_MAIL="
-Put the mail which will receive the alerts, such as the space left on device alert.
-"
-POSTFIX_DOMAIN="
-mydomain.net
-"
-POSTFIX_IP="
-my_relay_ip
-"
+export SUPPORT_MAIL="Put the mail which will receive the alerts, such as the space left on device alert."
+export POSTFIX_DOMAIN="mydomain.net"
+export POSTFIX_IP="my_relay_ip"
 
 #########################################################################
 # 0) Establish system language
@@ -72,7 +63,7 @@ unset LC_ALL
 #########################################################################
 # 6) system.conf options
 #########################################################################
-./modules/system.sh
+./modules/system_conf.sh
 
 #########################################################################
 # 7) hosts configuration

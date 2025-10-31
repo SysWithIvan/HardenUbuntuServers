@@ -12,5 +12,5 @@
 # (at your option) any later version. See the LICENSE file for details.       
 # =======================================================================
 
-printf '%s\n' "$AUTHORIZED_TEXT" > /etc/issue
-printf '%s\n' "$AUTHORIZED_TEXT" > /etc/issue.net
+printf '%s\n' "${AUTHORIZED_TEXT}" > /etc/issue
+printf '%s\n' "${AUTHORIZED_TEXT}" > /etc/issue.net
