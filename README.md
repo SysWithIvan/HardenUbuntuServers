@@ -2,6 +2,9 @@
 ## Harden Ubuntu Linux servers to align with the CIS Benchmarks for Ubuntu.
 ## Starting up
 ```
+mkdir /home/hardened
+chmod 755 /home/hardened
+cd /home/hardened
 git clone https://github.com/SysWithIvan/HardenUbuntuServers.git
 cd HardenUbuntuServers 
 ```
@@ -43,8 +46,8 @@ Here you can access to the [Wazuh installation guide](https://documentation.wazu
 
 Instead of replacing the built-in policy, copy this repo’s SCA file to the wazuh SCA dir:
 ```
-sudo mv /var/ossec/ruleset/sca/cis_ubuntu24-04.yml /var/ossec/ruleset/sca/cis_ubuntu24-04.yml.backup
-sudo cp HardenUbuntuServers/cis_ubuntu24-04.yml /var/ossec/ruleset/sca/
+sudo mv /var/ossec/ruleset/sca/cis_ubuntu<version>.yml /var/ossec/ruleset/sca/cis_ubuntu<version>.yml.backup
+sudo cp /home/hardened/HardenUbuntuServers/cis_ubuntu24-04.yml /var/ossec/ruleset/sca/
 sudo chown root:wazuh /var/ossec/ruleset/sca/cis_ubuntu24-04.yml
 sudo chmod 660 /var/ossec/ruleset/sca/cis_ubuntu24-04.yml
 ```
@@ -91,4 +94,5 @@ Mail: ivantexenery@gmail.com
 
 
 LinkedIn: [SysWithIvan](www.linkedin.com/in/iván-texenery-díaz-garcía-060621182)
+
 
